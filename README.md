@@ -128,9 +128,14 @@ d'une autre commande, créant ainsi un pipeline de traitement.
 `>` est utilisé pour rediriger la sortie standard d'une commande vers un 
 fichier, écrasant le contenu existant du fichier.
 
-### `>&`
+### `2>`
 
-`>&` est utilisé pour rediriger à la fois la sortie standard (stdout) et la 
+`2>` est utilisé pour rediriger la sortie d'erreur standard d'une commande vers un 
+fichier, écrasant le contenu existant du fichier.
+
+### `&>`
+
+`&>` est utilisé pour rediriger à la fois la sortie standard (stdout) et la 
 sortie d'erreur standard (stderr) vers un fichier ou un autre descripteur de 
 fichier.
 
