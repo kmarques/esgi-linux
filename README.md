@@ -88,6 +88,9 @@ l'option `-r` pour la copie récursive de répertoires.
 une référence physique vers le même fichier, tandis qu'un lien symbolique 
 (`ln -s`) crée une référence vers le chemin du fichier cible.
 
+chown
+chmod
+
 ## Réseau
 
 ### `netstat -laput`
@@ -115,6 +118,9 @@ atteindre une destination, en affichant chaque saut intermédiaire.
 La commande `ping` est utilisée pour tester la connectivité réseau en 
 envoyant des paquets ICMP à une adresse IP pour vérifier si elle est 
 accessible et mesurer le temps de réponse.
+
+arp
+nslookup
 
 ## Redirection
 
