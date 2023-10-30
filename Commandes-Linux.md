@@ -138,7 +138,7 @@ fichier, écrasant le contenu existant du fichier.
 
 `>&` est utilisé pour rediriger à la fois la sortie standard (stdout) et la 
 sortie d'erreur standard (stderr) vers un fichier ou un autre descripteur de 
-fichier.
+fichier. Doit être mis après les redirections "normales"
 
 ### `>>`
 
