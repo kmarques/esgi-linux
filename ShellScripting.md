@@ -34,4 +34,88 @@ Pour les tableaux itératifs, la commande `shift MY_ARRAY` permet de récupérer
 
 `$?` : Code retour du script ou fonction. Si 0 :D, sinon :(
 `$$` : PID du process courant
-`$!` : PID du dernier process lancé en background
+`$!` : PID du dernier process lancé
+
+## Structure conditionnelle
+### Test
+
+`test 0 -ne 2` <=> `[ 0 -ne 2 ]` (**les espaces sont importants**)   
+
+Pour comparer les entiers on utilise les options `-eq -ne -gt ...`   
+
+Pour comparer les chaînes de caractères, on utilise les opérateurs de comparaison `= != > < ...`
+
+Voir `man test`, pour toutes les possibilités.
+
+### Structure
+
+Structure **IF**
+```shell
+if [ expression ]
+then
+    statement
+    ...
+elif [ expression2 ]
+    statement_elif
+    ...
+else
+    statement_else
+fi
+```
+```shell
+[ expression ] && echo 3 # execute si expression vaut true
+[ expression ] || echo 3 # execute si expression vaut false
+```
+Structure **CASE**
+```shell
+case variable in
+value1) statement ;;
+value2) statement ;;
+*) statement_default ;;
+esac
+```
+
+## Strucuture itérative
+Structure **for**
+
+```shell
+for var_dest in var_source; do
+    statement
+done
+```
+```shell
+for ((i=0; 20 - $i; i = $i +1)); do
+    statement
+done
+```
+
+Structure **while/until**
+```shell
+while|until [ expression ]; do
+    statement
+done
+```
+
+## Structure fonctionnelle
+```shell
+[function] my_func() {
+    statement
+    [return int]
+}
+```
+Les fonctions se comportent comme des sous-programmes.
+Elles retournent un code retour accessible via la variable **\$?**.
+Elles prennent des arguments comme des programmmes `my_func toto titi` accessible via les variables **\${0..9}**, **\$@**, **\$#** au sein de la fonction.
+
+## Sous-shell
+```shell
+VAR=$(pwd) # $VAR contiendra le chemin courant
+```
+**<=>**
+```shell
+VAR=`pwd` # $VAR contiendra le chemin courant
+```
+**Calcul arithmétique**
+```shell
+VAR=$((1+2)) # $VAR = 3
+```
